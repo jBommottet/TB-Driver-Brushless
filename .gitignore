@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/c,c++,objective-c,assembler,batch
 # Edit at https://www.toptal.com/developers/gitignore?templates=c,c++,objective-c,assembler,batch
 
+### Version 2008 To ignore ###
+Carte2008/
+
 ### Assembler ###
 *.exe
 *.o
