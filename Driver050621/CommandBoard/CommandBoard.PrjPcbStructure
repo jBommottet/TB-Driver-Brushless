@@ -1,0 +1,3 @@
+Record=TopLevelDocument|FileName=CommandBoard.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=CommandBoard.SchDoc|Designator=Commandboard|SchDesignator=Commandboard|FileName=FunctionalSchematic.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=FunctionalSchematic.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=FunctionalSchematic.SchDoc|Designator=DSP|SchDesignator=DSP|FileName=DSP.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=DSP.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

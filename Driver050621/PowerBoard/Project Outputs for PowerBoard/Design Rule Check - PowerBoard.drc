@@ -1,0 +1,102 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc
+Date     : 02.06.2021
+Time     : 11:20:54
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Isolated copper: Split Plane  (+3.3VA) on int5 (+3.3VA). Dead copper detected. Copper area is : 0.142 sq. mm
+   Violation between Isolated copper: Split Plane  (+3.3VA) on int5 (+3.3VA). Dead copper detected. Copper area is : 0.585 sq. mm
+   Violation between Isolated copper: Split Plane  (+3.3VA) on int5 (+3.3VA). Dead copper detected. Copper area is : 0.585 sq. mm
+   Violation between Isolated copper: Split Plane  (+3.3VA) on int5 (+3.3VA). Dead copper detected. Copper area is : 1.491 sq. mm
+   Violation between Isolated copper: Split Plane  (+3.3VD) on int4 (+3.3VD). Dead copper detected. Copper area is : 0.142 sq. mm
+   Violation between Isolated copper: Split Plane  (+3.3VD) on int4 (+3.3VD). Dead copper detected. Copper area is : 0.585 sq. mm
+   Violation between Isolated copper: Split Plane  (+3.3VD) on int4 (+3.3VD). Dead copper detected. Copper area is : 0.585 sq. mm
+   Violation between Isolated copper: Split Plane  (AGND) on Int6 (GNDA). Dead copper detected. Copper area is : 0.309 sq. mm
+   Violation between Isolated copper: Split Plane  (AGND) on Int6 (GNDA). Dead copper detected. Copper area is : 0.408 sq. mm
+   Violation between Isolated copper: Split Plane  (AGND) on Int6 (GNDA). Dead copper detected. Copper area is : 1.281 sq. mm
+   Violation between Isolated copper: Split Plane  (DGND) on Int1 (PGND). Dead copper detected. Copper area is : 0.142 sq. mm
+   Violation between Isolated copper: Split Plane  (DGND) on Int1 (PGND). Dead copper detected. Copper area is : 0.309 sq. mm
+   Violation between Isolated copper: Split Plane  (DGND) on Int1 (PGND). Dead copper detected. Copper area is : 0.309 sq. mm
+   Violation between Isolated copper: Split Plane  (DGND) on Int1 (PGND). Dead copper detected. Copper area is : 1.281 sq. mm
+   Violation between Isolated copper: Split Plane  (DGND) on int2 (PWR_MOT). Dead copper detected. Copper area is : 0.142 sq. mm
+   Violation between Isolated copper: Split Plane  (DGND) on int2 (PWR_MOT). Dead copper detected. Copper area is : 0.585 sq. mm
+   Violation between Isolated copper: Split Plane  (DGND) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 0.585 sq. mm
+   Violation between Isolated copper: Split Plane  (VP) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 0.142 sq. mm
+   Violation between Isolated copper: Split Plane  (VP) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 0.438 sq. mm
+   Violation between Isolated copper: Split Plane  (VP) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 0.585 sq. mm
+   Violation between Isolated copper: Split Plane  (VP) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 2.082 sq. mm
+Rule Violations :21
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.15mm) (Max=0.25mm) (Preferred=0.2mm) (InNetClass('MeasureClass'))
+   Violation between Width Constraint: Track (10.025mm,15.4mm)(11.205mm,15.4mm) on Bottom Layer Actual Width = 0.5mm
+   Violation between Width Constraint: Track (15.925mm,15.4mm)(17.1mm,15.4mm) on Bottom Layer Actual Width = 0.5mm
+   Violation between Width Constraint: Track (21.925mm,15.4mm)(23.1mm,15.4mm) on Bottom Layer Actual Width = 0.5mm
+   Violation between Width Constraint: Track (27.925mm,15.4mm)(29.1mm,15.4mm) on Bottom Layer Actual Width = 0.5mm
+   Violation between Width Constraint: Track (33.925mm,15.4mm)(35.1mm,15.4mm) on Bottom Layer Actual Width = 0.5mm
+   Violation between Width Constraint: Track (35.8mm,25mm)(36.8mm,25mm) on Top Layer Actual Width = 0.5mm
+   Violation between Width Constraint: Track (4.125mm,15.4mm)(5.305mm,15.4mm) on Bottom Layer Actual Width = 0.5mm
+Rule Violations :7
+
+Processing Rule : Width Constraint (Min=0.15mm) (Max=0.5mm) (Preferred=0.2mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.25mm) (Max=0.25mm) (Preferred=0.25mm) (InNetClass('PWMClass'))
+   Violation between Width Constraint: Pad U6-6(40.3mm,7.325mm) on Top Layer Actual Width = 0.2mm
+Rule Violations :1
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InNetClass('PowerClass'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InNetClass('MeasureClass'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=3.5mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.06mm) (IsPad),(IsPad        or IsNet)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (not all),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room Powerboard (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Powerboard'))
+   Violation between Room Definition: Between Component J1-CONNECT 2pos 90° (8.2mm,26.1mm) on Top Layer And Room Powerboard (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Powerboard')) 
+Rule Violations :1
+
+Processing Rule : Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic'))
+   Violation between Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q1-MOSFET N-CH 80V (14.1mm,30.7mm) on Top Layer 
+   Violation between Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q2-MOSFET N-CH 80V (21.5mm,30.7mm) on Top Layer 
+   Violation between Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q3-MOSFET N-CH 80V (28.9mm,30.7mm) on Top Layer 
+   Violation between Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q4-MOSFET N-CH 80V (14.1mm,22.3mm) on Top Layer 
+   Violation between Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q5-MOSFET N-CH 80V (21.5mm,22.3mm) on Top Layer 
+   Violation between Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q6-MOSFET N-CH 80V (28.9mm,22.3mm) on Top Layer 
+Rule Violations :6
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 36
+Waived Violations : 0
+Time Elapsed        : 00:00:05

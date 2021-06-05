@@ -1,0 +1,13 @@
+Record=TopLevelDocument|FileName=MicroBrushless.MbsDoc
+Record=DiagramHierarchy|SourceDocument=MicroBrushless.MbsDoc|Kind=Multi-board Schematic Module|Designator=1|Source=..\CommandBoard\CommandBoard.PrjPcb
+Record=SubProject|SourceDocument=MicroBrushless.MbsDoc|ProjectPath=..\CommandBoard\CommandBoard.PrjPcb
+Record=DiagramHierarchy|SourceDocument=MicroBrushless.MbsDoc|Kind=Multi-board Schematic Module|Designator=6|Source=..\DCDC_5V\DCDC_5V.PrjPcb
+Record=SubProject|SourceDocument=MicroBrushless.MbsDoc|ProjectPath=..\DCDC_5V\DCDC_5V.PrjPcb
+Record=DiagramHierarchy|SourceDocument=MicroBrushless.MbsDoc|Kind=Multi-board Schematic Module|Designator=4|Source=..\InterfaceBoard\InterfaceBoard.PrjPcb
+Record=SubProject|SourceDocument=MicroBrushless.MbsDoc|ProjectPath=..\InterfaceBoard\InterfaceBoard.PrjPcb
+Record=DiagramHierarchy|SourceDocument=MicroBrushless.MbsDoc|Kind=Multi-board Schematic Module|Designator=5|Source=..\InterfaceBoard\InterfaceBoard.PrjPcb
+Record=SubProject|SourceDocument=MicroBrushless.MbsDoc|ProjectPath=..\InterfaceBoard\InterfaceBoard.PrjPcb
+Record=DiagramHierarchy|SourceDocument=MicroBrushless.MbsDoc|Kind=Multi-board Schematic Module|Designator=2|Source=..\PowerBoard\PowerBoard.PrjPcb
+Record=SubProject|SourceDocument=MicroBrushless.MbsDoc|ProjectPath=..\PowerBoard\PowerBoard.PrjPcb
+Record=DiagramHierarchy|SourceDocument=MicroBrushless.MbsDoc|Kind=Multi-board Schematic Module|Designator=3|Source=..\PowerBoard\PowerBoard.PrjPcb
+Record=SubProject|SourceDocument=MicroBrushless.MbsDoc|ProjectPath=..\PowerBoard\PowerBoard.PrjPcb

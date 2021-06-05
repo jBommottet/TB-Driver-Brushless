@@ -1,0 +1,29 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Project [PowerBoard.PrjPcb]
+   Generated File[PowerBoard_Copper_Signal_Top.gbr]
+   Generated File[PowerBoard_Copper_Plane_1.gbr]
+   Generated File[PowerBoard_Copper_Plane_2.gbr]
+   Generated File[PowerBoard_Copper_Plane_3.gbr]
+   Generated File[PowerBoard_Copper_Plane_4.gbr]
+   Generated File[PowerBoard_Copper_Plane_5.gbr]
+   Generated File[PowerBoard_Copper_Plane_6.gbr]
+   Generated File[PowerBoard_Copper_Signal_Bot.gbr]
+   Generated File[PowerBoard_Legend_Bot.gbr]
+   Generated File[PowerBoard_Soldermask_Bot.gbr]
+   Generated File[PowerBoard_Legend_Top.gbr]
+   Generated File[PowerBoard_Soldermask_Top.gbr]
+   Generated File[PowerBoard_Mechanical_1.gbr]
+   Generated File[PowerBoard_NPTH_Drill.gbr]
+   Generated File[PowerBoard_PTH_Drill.gbr]
+   Generated File[PowerBoard_Drawing_1.gbr]
+   Generated File[PowerBoard_Drillmap_1.gbr]
+   Generated File[PowerBoard.RUL]
+   Generated File[PowerBoard.EXTREP]
+   Generated File[PowerBoard.REP]
+
+
+Files Generated   : 20
+Documents Printed : 0
+
+Finished Output Generation At 09:45:48 On 03.06.2021

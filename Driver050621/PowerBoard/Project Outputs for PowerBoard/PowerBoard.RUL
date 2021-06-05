@@ -1,0 +1,7 @@
+DRC Rules Export File for PCB: C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=5.91
+RuleKind=Width|RuleName=PWMWidth|Scope=Board|Minimum=9.84
+RuleKind=Width|RuleName=MeasureWidth|Scope=Board|Minimum=5.91
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=5.91
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

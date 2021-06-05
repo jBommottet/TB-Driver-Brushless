@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc
+Date         : 01.06.2021
+Time         : 19:19:52
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 99.21%
+    Connections, 252
+    Connections routed, 250
+    Connections remaining, 2
+count : 4

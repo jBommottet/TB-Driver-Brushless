@@ -1,0 +1,476 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Altium\Clients\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">02.06.2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:20:54</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:05</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc" class="file"><acronym title="C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc">C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">36</td></tr>
+</table>
+</td>
+</table><a name="IDTDEMQNN2UIX3DVATLIXGIET0YFEUFDERT24B3SBQU2TPBTD4WDAG"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIOYPQFFGGZSOGUHSU5CK1YXCPGUYDC1WUS2Y2QHBJVVA3OWCBXNB">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWHHFM0WMPUJ3JY1TAFNIMQS0CEV5HZHI3Q0YPDLTXYFC4EDLYW5H">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIGJFZJI0X1DRJ4GT2U0FTFVNBOYWLE3YJUNB3HJDL3VT2VXRN5IE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">21</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAW4ST5AF3FJCCH5RFKCVAQONI23BUOVEX3FOOD31QUBDQPZZBZG">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKCWBQ1DO0VHDHKQJLR3XGDWNBGSAAGDQ5AFACAMVH2LQSQIP2OGE">Width Constraint (Min=0.15mm) (Max=0.25mm) (Preferred=0.2mm) (InNetClass('MeasureClass'))</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2BL1D1HINTAJJZGYOMQAXL2HRDU3DVKVWYRMD2E1FFGYSXRRRN5F">Width Constraint (Min=0.15mm) (Max=0.5mm) (Preferred=0.2mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT5Z31UC21BESFEMUT32LBRQ1XFI2QITJGHJWERKMJEGCGRN5141O">Width Constraint (Min=0.25mm) (Max=0.25mm) (Preferred=0.25mm) (InNetClass('PWMClass'))</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKMFA00TNZ4TNPMJUOQIAFLUDEOWLYCAP30VFYSLNGIDTMXFD4UEB">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InNetClass('PowerClass'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBDTFC4LZPMAAGOEZCQO0XPTNYHXO4VA52HJ0JAPKRO1UFSCR2SAI">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InNetClass('MeasureClass'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUEBQXJFNACU3HQGDDDX4DMLVMKWJQGEFOLCNO3F3RZVDEVEUV5RD">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHCJC542PJBLFI5BPFGGB0BQXBYSICKWP3TML3NBWOUQD0YRNZ1O">Hole Size Constraint (Min=0.025mm) (Max=3.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDY2WZIE0DRXNTMYIKVH5YQKPB4NA4BPWU5DQOJPI0BAMFMWDII20B">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYNWLWCWZYIFLCKNT2JFTCXOXPPOPCDDTNO5NZRHDKQVSK1KSV5JC">Minimum Solder Mask Sliver (Gap=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYU5W2XC3USSRD0P04KS1TAS5VCY5VSY1OGT4S4INX4PTXVSNYDZB">Silk To Solder Mask (Clearance=0.06mm) (IsPad),(IsPad        or IsNet)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3N4FW1OFZSFHOI5PDLUSYHKIJKVSGPXHUN2RWE1OILHXVVDOJM">Silk to Silk (Clearance=0.254mm) (not all),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDT05V3H3DEYQVBJH0WQGWZINTAOTMEE3LIHBGI2HPUCRHV4LF24SC">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDG2XNSGXDI3MPIMH1AZEWMDEC2FQF0BNZT43PTHX1R3JTOQ55DTJ">Room Powerboard (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Powerboard'))</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGZVSC13GMCDZDACRSTV23NGN4JBTPK5KLRDIRBKV1NR1VMNRUZ5H">Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic'))</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR5NED2PGPLZINXY5OJI4SA3NICQUSV3DZDCCDINUI55T1S2VC1EK">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">36</td>
+</tr>
+</table><br><a name="IDIGJFZJI0X1DRJ4GT2U0FTFVNBOYWLE3YJUNB3HJDL3VT2VXRN5IE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True">Isolated copper: Split Plane  (+3.3VA) on int5 (+3.3VA). Dead copper detected. Copper area is : 0.142 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31653.375mil|Location2.X=31712.187mil|Location1.Y=17421.672mil|Location2.Y=17480.473mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31653.375mil|Location2.X=31712.187mil|Location1.Y=17421.672mil|Location2.Y=17480.473mil|Absolute=True">Isolated copper: Split Plane  (+3.3VA) on int5 (+3.3VA). Dead copper detected. Copper area is : 0.585 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29980.727mil|Location2.X=30039.528mil|Location1.Y=18700.627mil|Location2.Y=18759.431mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29980.727mil|Location2.X=30039.528mil|Location1.Y=18700.627mil|Location2.Y=18759.431mil|Absolute=True">Isolated copper: Split Plane  (+3.3VA) on int5 (+3.3VA). Dead copper detected. Copper area is : 0.585 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31205.297mil|Location2.X=31291.496mil|Location1.Y=18636.983mil|Location2.Y=18759.431mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31205.297mil|Location2.X=31291.496mil|Location1.Y=18636.983mil|Location2.Y=18759.431mil|Absolute=True">Isolated copper: Split Plane  (+3.3VA) on int5 (+3.3VA). Dead copper detected. Copper area is : 1.491 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True">Isolated copper: Split Plane  (+3.3VD) on int4 (+3.3VD). Dead copper detected. Copper area is : 0.142 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31653.375mil|Location2.X=31712.187mil|Location1.Y=17421.672mil|Location2.Y=17480.473mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31653.375mil|Location2.X=31712.187mil|Location1.Y=17421.672mil|Location2.Y=17480.473mil|Absolute=True">Isolated copper: Split Plane  (+3.3VD) on int4 (+3.3VD). Dead copper detected. Copper area is : 0.585 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29980.727mil|Location2.X=30039.528mil|Location1.Y=18700.627mil|Location2.Y=18759.431mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29980.727mil|Location2.X=30039.528mil|Location1.Y=18700.627mil|Location2.Y=18759.431mil|Absolute=True">Isolated copper: Split Plane  (+3.3VD) on int4 (+3.3VD). Dead copper detected. Copper area is : 0.585 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29985.414mil|Location2.X=30021.433mil|Location1.Y=18718.725mil|Location2.Y=18754.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29985.414mil|Location2.X=30021.433mil|Location1.Y=18718.725mil|Location2.Y=18754.744mil|Absolute=True">Isolated copper: Split Plane  (AGND) on Int6 (GNDA). Dead copper detected. Copper area is : 0.309 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31671.476mil|Location2.X=31711.438mil|Location1.Y=17426.358mil|Location2.Y=17475.426mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31671.476mil|Location2.X=31711.438mil|Location1.Y=17426.358mil|Location2.Y=17475.426mil|Absolute=True">Isolated copper: Split Plane  (AGND) on Int6 (GNDA). Dead copper detected. Copper area is : 0.408 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31215.472mil|Location2.X=31273.401mil|Location1.Y=18636.983mil|Location2.Y=18754.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31215.472mil|Location2.X=31273.401mil|Location1.Y=18636.983mil|Location2.Y=18754.744mil|Absolute=True">Isolated copper: Split Plane  (AGND) on Int6 (GNDA). Dead copper detected. Copper area is : 1.281 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True">Isolated copper: Split Plane  (DGND) on Int1 (PGND). Dead copper detected. Copper area is : 0.142 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31671.476mil|Location2.X=31707.5mil|Location1.Y=17426.358mil|Location2.Y=17462.379mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31671.476mil|Location2.X=31707.5mil|Location1.Y=17426.358mil|Location2.Y=17462.379mil|Absolute=True">Isolated copper: Split Plane  (DGND) on Int1 (PGND). Dead copper detected. Copper area is : 0.309 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29985.414mil|Location2.X=30021.433mil|Location1.Y=18718.725mil|Location2.Y=18754.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29985.414mil|Location2.X=30021.433mil|Location1.Y=18718.725mil|Location2.Y=18754.744mil|Absolute=True">Isolated copper: Split Plane  (DGND) on Int1 (PGND). Dead copper detected. Copper area is : 0.309 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31215.472mil|Location2.X=31273.401mil|Location1.Y=18636.983mil|Location2.Y=18754.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31215.472mil|Location2.X=31273.401mil|Location1.Y=18636.983mil|Location2.Y=18754.744mil|Absolute=True">Isolated copper: Split Plane  (DGND) on Int1 (PGND). Dead copper detected. Copper area is : 1.281 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True">Isolated copper: Split Plane  (DGND) on int2 (PWR_MOT). Dead copper detected. Copper area is : 0.142 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31653.375mil|Location2.X=31712.187mil|Location1.Y=17421.672mil|Location2.Y=17480.473mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31653.375mil|Location2.X=31712.187mil|Location1.Y=17421.672mil|Location2.Y=17480.473mil|Absolute=True">Isolated copper: Split Plane  (DGND) on int2 (PWR_MOT). Dead copper detected. Copper area is : 0.585 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31653.375mil|Location2.X=31712.187mil|Location1.Y=17421.672mil|Location2.Y=17480.473mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31653.375mil|Location2.X=31712.187mil|Location1.Y=17421.672mil|Location2.Y=17480.473mil|Absolute=True">Isolated copper: Split Plane  (DGND) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 0.585 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30782.09mil|Location2.X=30806.492mil|Location1.Y=17516.342mil|Location2.Y=17540.744mil|Absolute=True">Isolated copper: Split Plane  (VP) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 0.142 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31261.323mil|Location2.X=31313.098mil|Location1.Y=18611.398mil|Location2.Y=18635.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31261.323mil|Location2.X=31313.098mil|Location1.Y=18611.398mil|Location2.Y=18635.877mil|Absolute=True">Isolated copper: Split Plane  (VP) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 0.438 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29980.727mil|Location2.X=30039.528mil|Location1.Y=18700.627mil|Location2.Y=18759.431mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29980.727mil|Location2.X=30039.528mil|Location1.Y=18700.627mil|Location2.Y=18759.431mil|Absolute=True">Isolated copper: Split Plane  (VP) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 0.585 sq. mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31306.928mil|Location2.X=31404.35mil|Location1.Y=18679.028mil|Location2.Y=18759.431mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31306.928mil|Location2.X=31404.35mil|Location1.Y=18679.028mil|Location2.Y=18759.431mil|Absolute=True">Isolated copper: Split Plane  (VP) on int3 (ALIM_MOT). Dead copper detected. Copper area is : 2.082 sq. mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDKCWBQ1DO0VHDHKQJLR3XGDWNBGSAAGDQ5AFACAMVH2LQSQIP2OGE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=0.15mm) (Max=0.25mm) (Preferred=0.2mm) (InNetClass('MeasureClass'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30367.201mil|Location2.X=30409.224mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30367.201mil|Location2.X=30409.224mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True">Width Constraint: Track (10.025mm,15.4mm)(11.205mm,15.4mm) on Bottom Layer Actual Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30599.386mil|Location2.X=30641.408mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30599.386mil|Location2.X=30641.408mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True">Width Constraint: Track (15.925mm,15.4mm)(17.1mm,15.4mm) on Bottom Layer Actual Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30835.606mil|Location2.X=30877.628mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30835.606mil|Location2.X=30877.628mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True">Width Constraint: Track (21.925mm,15.4mm)(23.1mm,15.4mm) on Bottom Layer Actual Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31071.827mil|Location2.X=31113.85mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31071.827mil|Location2.X=31113.85mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True">Width Constraint: Track (27.925mm,15.4mm)(29.1mm,15.4mm) on Bottom Layer Actual Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31308.048mil|Location2.X=31350.07mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31308.048mil|Location2.X=31350.07mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True">Width Constraint: Track (33.925mm,15.4mm)(35.1mm,15.4mm) on Bottom Layer Actual Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31378.421mil|Location2.X=31420.443mil|Location1.Y=18374.483mil|Location2.Y=18397.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31378.421mil|Location2.X=31420.443mil|Location1.Y=18374.483mil|Location2.Y=18397.168mil|Absolute=True">Width Constraint: Track (35.8mm,25mm)(36.8mm,25mm) on Top Layer Actual Width = 0.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30134.917mil|Location2.X=30176.94mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=30134.917mil|Location2.X=30176.94mil|Location1.Y=17996.532mil|Location2.Y=18019.216mil|Absolute=True">Width Constraint: Track (4.125mm,15.4mm)(5.305mm,15.4mm) on Bottom Layer Actual Width = 0.5mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDT5Z31UC21BESFEMUT32LBRQ1XFI2QITJGHJWERKMJEGCGRN5141O"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=0.25mm) (Max=0.25mm) (Preferred=0.25mm) (InNetClass('PWMClass'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31535.903mil|Location2.X=31558.588mil|Location1.Y=17678.618mil|Location2.Y=17701.303mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=31535.903mil|Location2.X=31558.588mil|Location1.Y=17678.618mil|Location2.Y=17701.303mil|Absolute=True">Width Constraint: Pad U6-6(40.3mm,7.325mm) on Top Layer Actual Width = 0.2mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDG2XNSGXDI3MPIMH1AZEWMDEC2FQF0BNZT43PTHX1R3JTOQ55DTJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room Powerboard (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Powerboard'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=18779.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=18779.528mil|Absolute=True">Room Definition: Between Component J1-CONNECT 2pos 90° (8.2mm,26.1mm) on Top Layer And Room Powerboard (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Powerboard')) </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDGZVSC13GMCDZDACRSTV23NGN4JBTPK5KLRDIRBKV1NR1VMNRUZ5H"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=19587.807mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=19587.807mil|Absolute=True">Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q1-MOSFET N-CH 80V (14.1mm,30.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=19587.808mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=19587.808mil|Absolute=True">Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q2-MOSFET N-CH 80V (21.5mm,30.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31743.587mil|Location1.Y=17401.574mil|Location2.Y=19587.807mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31743.587mil|Location1.Y=17401.574mil|Location2.Y=19587.807mil|Absolute=True">Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q3-MOSFET N-CH 80V (28.9mm,30.7mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=19257.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=19257.099mil|Absolute=True">Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q4-MOSFET N-CH 80V (14.1mm,22.3mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=19257.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31732.284mil|Location1.Y=17401.574mil|Location2.Y=19257.099mil|Absolute=True">Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q5-MOSFET N-CH 80V (21.5mm,22.3mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31743.587mil|Location1.Y=17401.574mil|Location2.Y=19257.099mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Dell 5500\Desktop\Joan\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=29960.63mil|Location2.X=31743.587mil|Location1.Y=17401.574mil|Location2.Y=19257.099mil|Absolute=True">Room Definition: Between Room Power Electronic (Bounding Region = (761mm, 442mm, 806mm, 477mm) (InComponentClass('Power Electronic')) And SOIC Component Q6-MOSFET N-CH 80V (28.9mm,22.3mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

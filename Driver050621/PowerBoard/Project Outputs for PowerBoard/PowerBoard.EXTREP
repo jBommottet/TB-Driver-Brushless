@@ -1,0 +1,26 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: PowerBoard.GBR   03.06.2021  09:45:46
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.gbr                Top Layer                               
+.gbr                Int1 (PGND)                             
+.gbr                int2 (PWR_MOT)                          
+.gbr                int3 (ALIM_MOT)                         
+.gbr                int4 (+3.3VD)                           
+.gbr                int5 (+3.3VA)                           
+.gbr                Int6 (GNDA)                             
+.gbr                Bottom Layer                            
+.gbr                Bottom Overlay                          
+.gbr                Bottom Solder                           
+.gbr                Top Overlay                             
+.gbr                Top Solder                              
+.gbr                Board                                   
+.gbr                Non-plated through-hole drill file      
+.gbr                Plated through-hole drill file          
+.gbr                Drill Drawing                           
+.gbr                Drill Guide                             
+------------------------------------------------------------------------------------------
